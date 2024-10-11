@@ -1,15 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,600&family=Sintony:wght@400;700&display=swap");
 /* Here we define the Custom properties */
 :root {
-	--black: #393939;
-	/* Typography */
-	--type-principal: Arial, sans-serif;
-	--type-secondary: Verdana;
+	/* Typography Poppins */
+	/* (font-weight: 400 font-style: normal) - (font-weight: 700 font-style: normal) */
+	--typography-titles: "Sintony", sans-serif;
+
+	/* Typography Poppins */
+	/* (font-weight: 400 font-style: normal / italic) - (font-weight: 600 font-style: normal/italic) */
+	--typography-common: "Poppins", sans-serif;
+
+	/* Main Colors */
+	--blue-color: #1649ff;
+
+	/* Secondary Colors */
+	--dark-color: #242424;
+	--gray-color: #6d6d6d;
+	--black-color: #000;
+	--white-color: #fff;
 }
 
 /* We adapt them to the dark mode */
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
 	:root {
-		--black: #ececec;
+		--black-color: #ececec;
 	}
 }
 
@@ -112,12 +125,12 @@ q:after {
 
 /* We configure the text we select */
 ::-moz-selection {
-	background-color: var(--black);
-	color: var(--blanco);
+	background-color: var(--black-color);
+	color: var(--white-color);
 }
 ::selection {
-	background-color: var(--black);
-	color: var(--blanco);
+	background-color: var(--black-color);
+	color: var(--white-color);
 }
 
 /* We level out problems of typography and form placement */
@@ -164,21 +177,23 @@ svg {
 } */
 /* We set the typography for the whole web */
 body {
-	min-height: 100vh;
+	background-color: #202020;
+	color: var(--white-color);
+	font-family: var(--typography-common);
 	font-size: 100%;
-	font-family: var(--type-principal);
-	color: var(--black);
-
-	/* optional */
-	line-height: 1.4em;
-
-	/* optional */
-	-webkit-hyphens: auto;
-	-ms-hyphens: auto;
-	hyphens: auto;
 
 	/* optional */
 	font-smooth: always;
+
+	/* optional */
+	/* line-height: 1.4em; */
+
+	min-height: 100vh;
+
+	/* optional: (add -) */
+	/* -webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto; */
 
 	/* optional */
 	-webkit-font-smoothing: antialiased;

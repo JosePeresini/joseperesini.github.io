@@ -50,79 +50,164 @@
 	</head>
 	<body>
 		<div class="container">
-			<header class="header">
-				<div class="logo">
-					<img class="logo__img" src="./assets/imgs/main-logo.svg" alt="" />
-				</div>
-				<div class="menu">
-					<i class="menu__i bi bi-list"></i>
-				</div>
-				<nav class="nav">
-					<a class="nav__a" href="#home">
-						<span class="nav__span">I</span>nicio
-					</a>
-					<a class="nav__a" href="#about">
-						<span class="nav__span">S</span>obre mí
-					</a>
-					<a class="nav__a" href="#tech">
-						<span class="nav__span">T</span>ecnologías
-					</a>
-					<a class="nav__a" href="#project">
-						<span class="nav__span">P</span>royectos
-					</a>
-					<a class="nav__a" href="#contact">
-						<span class="nav__span">C</span>ontacto
-					</a>
-				</nav>
-				<aside class="aside">
-					<a class="aside__a" href="#home">
-						<span class="aside__span">I</span>nicio
-					</a>
-					<a class="aside__a" href="#about">
-						<span class="aside__span">S</span>obre mí
-					</a>
-					<a class="aside__a" href="#tech">
-						<span class="aside__span">T</span>ecnologías
-					</a>
-					<a class="aside__a" href="#project">
-						<span class="aside__span">P</span>royectos
-					</a>
-					<a class="aside__a" href="#contact">
-						<span class="aside__span">C</span>ontacto
-					</a>
-				</aside>
+			<header class="header" id="header">
+				<h2 class="header__h2">
+					<a class="header__a--index" href="https://joseperesini.com"
+						>PortFolio</a
+					>
+				</h2>
+				<menu class="header__menu">
+					<i class="header__i bi bi-arrow-down-circle"></i>
+				</menu>
+				<nav class="header__nav"></nav>
 			</header>
 			<main class="main">
+				<a href=""></a>
+				<section class="works"></section>
 				<section class="about" id="about">
-					<figure class="about__figure">
-						<img class="about__img" src="#" alt="" />
-						<figcaption class="about__figcation">
-							<h1 class="about__h1">José Peresini</h1>
-						</figcaption>
-					</figure>
-					<p class="about__p">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
-						iure quo voluptates quibusdam quae incidunt repellat. Eligendi ipsam
-						voluptatum vitae, laborum sed ipsum, possimus distinctio veniam sunt
-						laboriosam dicta saepe nesciunt.
-					</p>
-					<a class="about__a" href="#">
-						V<span class="about__span">er más...</span>
-					</a>
-					<footer class="about__footer">
-						<a class="about__a--linkedin" href=" ">
-							<i class="about__i bi bi-linkedin"></i>
-						</a>
-						<a class="about__a--github" href="">
-							<i class="about__i bi bi-github"></i>
-						</a>
-						<a class="about__a--twitter" href="">
-							<i class="about__i bi bi-twitter-x"></i>
-						</a>
-					</footer>
+					<article class="about__article">
+						<h2 class="about__h2">Hola 👋, mi nombre es José!</h2>
+						<p class="about__p">
+							Soy una persona curiosa y enfocada en reinventarme. Empecé en
+							panadería, pasé por el área de farmacia y, actualmente, estudio
+							desarrollo web, un campo donde aplico mi creatividad en proyectos
+							que me motivan.
+						</p>
+						<p class="about__p">
+							Me adapto y esmero en cada proyecto para su creación y
+							realización.
+						</p>
+						<p class="about__p">
+							Trabajo en equipo impulsado por la importancia de valores como el
+							compañerismo. Durante mi formación, participé en proyectos
+							individuales y grupales, lo que enriqueció mis conocimientos
+							aplicados y fortaleció capacidades en el desarrollo web.
+						</p>
+						<p class="about__p">
+							Aspiro a crecer tanto personal como profesionalmente,
+							desarrollando nuevas competencias que me permitan aportar
+							soluciones creativas y formar parte de proyectos dinámicos con
+							impacto positivo a largo plazo.
+						</p>
+					</article>
+				</section>
+				<section class="tech">
+					<h2 class="tech__h2">Tecnologías</h2>
+					<ul class="tech__ul--programinng">
+						<li class="tech__li--programinng">
+							<img
+								src="./assets/imgs/tech/html5.png"
+								alt=""
+								class="tech__img"
+							/>
+						</li>
+						<li class="tech__li--programinng">
+							<img src="./assets/imgs/tech/css3.png" alt="" class="tech__img" />
+						</li>
+						<li class="tech__li--programinng">
+							<img
+								src="./assets/imgs/tech/javascript.png"
+								alt=""
+								class="tech__img"
+							/>
+						</li>
+					</ul>
+					<!-- <ul class="tech__ul--creator" No definida en el CSS>
+						<li class="tech__li--creator">
+							Esta página la desarrollé con HTML5, CSS3 y JavaScript, integrando
+							interacción dinámica. Apliqué buenas prácticas desde el inicio,
+							reiniciando estilos, definiendo variables y utilizando la
+							metodología BEM para estructurar el código de forma eficiente y
+							clara.
+						</li>
+						<li class="tech__li--creator">
+							Este es mi primer proyecto realizado sin el apoyo de frameworks,
+							librerías o colaboradores, basándome únicamente en lo aprendido de
+							streamers y en mi carrera actual. Agregué íconos de Bootstrap 5
+							para complementarlo.
+						</li>
+						<li class="tech__li--creator">
+							Recibí apoyo de IAs como Grok, ChatGPT-4 y GitHub Copilot para
+							crear la sección HEAD en HTML.
+						</li>
+					</ul> -->
+				</section>
+				<section class="credits">
+					<article class="credits__article">
+						<h3 class="credits__h3">Creditos</h3>
+						<p class="credits__p">
+							<span class="credits__span">Freepik</span>
+							y
+							<span class="credits__span">Pixel Perfect</span>
+						</p>
+						<div class="credits__div">
+							<a
+								href="https://www.freepik.es/icono/html-5_732212#fromView=search&page=1&position=40&uuid=1848ad59-5b3c-457d-8b88-7334aed50757"
+								class="credits__a"
+								target="_blank"
+								>HTML5</a
+							>
+							<a
+								href="https://www.freepik.es/icono/css-3_732190#fromView=search&page=1&position=1&uuid=b88f2a64-7faf-434e-b4ef-6fb59f8b9d7f"
+								class="credits__a"
+								target="_blank"
+								>CSS3</a
+							>
+							<a
+								href="https://www.freepik.es/icono/js_5968292#fromView=search&page=1&position=0&uuid=56d74c92-f5f0-4e99-aac0-a839f1dd809e"
+								class="credits__a"
+								target="_blank"
+								>JavaScript</a
+							>
+						</div>
+					</article>
 				</section>
 			</main>
-			<footer class="footer">asd</footer>
+			<footer class="footer" id="footer">
+				<nav class="footer__nav">
+					<a
+						href="https://www.instagram.com/joseperesini/"
+						class="footer__a"
+						target="_blank"
+					>
+						<i class="footer__i--instagram bi bi-instagram"></i>
+					</a>
+					<a
+						href="https://github.com/JosePeresini"
+						class="footer__a"
+						target="_blank"
+					>
+						<i class="footer__i--github bi bi-github"></i>
+					</a>
+				</nav>
+				<a href="#header" class="footer__a--start">
+					<i class="bi bi-caret-up-square-fill"></i>
+				</a>
+				<figure class="footer__figure">
+					<img
+						src="./assets/imgs/whatsapp/WSPPersonal.svg"
+						alt=""
+						class="footer__img"
+					/>
+					<figcaption class="footer__figcaption">
+						<a
+							class="footer__a--wsp"
+							href="https://w.app/36erm5"
+							target="_blank"
+							>Link WhatsApp</a
+						>
+					</figcaption>
+				</figure>
+				<div class="footer__div">
+					<span class="footer__span">joseignacioperesini@gmail.com</span>
+					<h1 class="footer__h1">
+						<span class="footer__span">Desarrollador Web</span>
+						José Peresini
+						<span class="footer__span"> © 2024</span>
+					</h1>
+				</div>
+			</footer>
 		</div>
+		<script src="./assets/js/main.js"></script>
 	</body>
 </html>

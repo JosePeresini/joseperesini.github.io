@@ -9,8 +9,18 @@
 	/* (font-weight: 400 font-style: normal / italic) - (font-weight: 600 font-style: normal/italic) */
 	--typography-common: "Poppins", sans-serif;
 
+	/* Font Sizes */
+	--font-size-xs: 0.7rem;
+	--font-size-sm: 1rem;
+	--font-size-md: 1.3rem;
+	--font-size-lg: 1.7rem;
+	--font-size-xl: 2rem;
+	--font-size-xxl: 3rem;
+	--font-size-xxxl: 4rem;
+
 	/* Main Colors */
 	--blue-color: #1649ff;
+	--blue-light-color: #0099ff;
 
 	/* Secondary Colors */
 	--dark-color: #242424;
@@ -177,7 +187,7 @@ svg {
 } */
 /* We set the typography for the whole web */
 body {
-	background-color: #202020;
+	background-color: var(--dark-color);
 	color: var(--white-color);
 	font-family: var(--typography-common);
 	font-size: 100%;

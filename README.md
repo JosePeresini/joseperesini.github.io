@@ -23,3 +23,5 @@ The site includes:
 - **HTML5** for clear and organized structure.
 - **CSS3** to create modern and visually appealing styles.
 - **JavaScript** for implementing dynamic and interactive behaviors.
+
+Connect with Me "joseperesini.com"

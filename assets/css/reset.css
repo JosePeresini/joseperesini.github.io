@@ -1,38 +1,56 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,600&family=Sintony:wght@400;700&display=swap");
-/* Here we define the Custom properties */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+
 :root {
-	/* Typography Poppins */
-	/* (font-weight: 400 font-style: normal) - (font-weight: 700 font-style: normal) */
-	--typography-titles: "Sintony", sans-serif;
-
-	/* Typography Poppins */
-	/* (font-weight: 400 font-style: normal / italic) - (font-weight: 600 font-style: normal/italic) */
-	--typography-common: "Poppins", sans-serif;
-
-	/* Font Sizes */
-	--font-size-xs: 0.7rem;
-	--font-size-sm: 1rem;
-	--font-size-md: 1.3rem;
-	--font-size-lg: 1.7rem;
-	--font-size-xl: 2rem;
-	--font-size-xxl: 3rem;
-	--font-size-xxxl: 4rem;
-
 	/* Main Colors */
-	--blue-color: #1649ff;
-	--blue-light-color: #0099ff;
+	--color-primary: #7b2cbf;
+	--color-primary-l: #9b59d0;
+	--color-primary-d: #5e1a99;
 
-	/* Secondary Colors */
-	--dark-color: #242424;
-	--gray-color: #6d6d6d;
-	--black-color: #000;
-	--white-color: #fff;
+	--color-secondary: #e8d9f1;
+	--color-secondary-l: #f5edfa;
+	--color-secondary-d: #d0b8e0;
+
+	--color-white: #ffffff;
+	--color-white-l: #f8f9fa;
+	--color-white-d: #e9ecef;
+	--color-black: #212529;
+	--color-black-l: #343a40;
+	--color-black-d: #1a1d21;
+
+	--color-accent: #ff6f61;
+	--color-accent-l: #ff8c7a;
+	--color-accent-d: #e65a50;
+
+	/* Font Familyes */
+	--font-title: "Sour Gummy", sans-serif;
+	--font-paragraph: "Nunito Sans", sans-serif;
+
+	/* Transitions */
+	--transition-fast: 0.2s ease-in-out;
+	--transition-medium: 0.3s ease-in-out;
+	--transition-slow: 0.5s ease-in-out;
+
+	/* Borders */
+	--radius-sm: 0.25rem;
+	--radius-md: 0.5rem;
+	--radius-lg: 1rem;
+	--radius-full: 50%;
+
+	/* Shadows */
+	--shadow-sm: 0 2px 4px;
+	--shadow-md: 0 4px 8px;
+	--shadow-lg: 0 8px 12px 10px;
+	--shadow-xl: 0 3px 30px 10px;
 }
 
-/* We adapt them to the dark mode */
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
 	:root {
-		--black-color: #ececec;
+		--color-white: #1a1d21;
+		--color-white-l: #212529;
+		--color-white-d: #343a40;
+		--color-black: #f8f9fa;
+		--color-black-l: #e9ecef;
+		--color-black-d: #ffffff;
 	}
 }
 
@@ -47,9 +65,19 @@
 		-webkit-transition: none !important;
 		transition: none !important;
 	}
+	.hero__link:hover,
+	.work__article:hover,
+	.tech__li:hover,
+	.contact__a:hover,
+	.footer__button--absolute:hover {
+		transform: none;
+	}
+
+	.work__article:hover .work__img {
+		scale: 1;
+	}
 }
 
-/* Reset the margins and paddings of all labels */
 * {
 	margin: 0;
 	padding: 0;
@@ -59,7 +87,6 @@
 	vertical-align: baseline;
 }
 
-/* We avoid problems with the images */
 img,
 picture,
 video,
@@ -78,7 +105,6 @@ figure {
 	object-position: center center;
 }
 
-/* We reset the links to work as boxes... */
 a {
 	display: block;
 	text-decoration: none;
@@ -86,22 +112,18 @@ a {
 	font-size: inherit;
 }
 
-/* ... except for those found in paragraphs */
 p a {
 	display: inline;
 }
 
-/* We remove the dots from the <li> */
 li {
 	list-style-type: none;
 }
 
-/* We set up soft anchors */
 html {
 	scroll-behavior: smooth;
 }
 
-/* We deactivate default styles of the main text labels */
 h1,
 h2,
 h3,
@@ -124,7 +146,6 @@ em {
 	color: inherit;
 }
 
-/* We avoid problems with pseudo-elements of quotes */
 blockquote:before,
 blockquote:after,
 q:before,
@@ -133,7 +154,6 @@ q:after {
 	content: none;
 }
 
-/* We configure the text we select */
 ::-moz-selection {
 	background-color: var(--black-color);
 	color: var(--white-color);
@@ -143,7 +163,6 @@ q:after {
 	color: var(--white-color);
 }
 
-/* We level out problems of typography and form placement */
 form,
 input,
 textarea,
@@ -165,7 +184,11 @@ label {
 	appearance: none;
 }
 
-/* We reset the tables */
+input::-webkit-inner-spin-button,
+.no-controls::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+}
+
 table,
 tr,
 td {
@@ -173,23 +196,16 @@ td {
 	border-spacing: 0;
 }
 
-/* We avoid SVG problems */
 svg {
 	width: 100%;
 	display: block;
 	fill: currentColor;
 }
 
-/* (Testing, do not use in production) In the case of adding a */
-/* p svg{
-  display: inline;
-  width: initial;
-} */
-/* We set the typography for the whole web */
 body {
-	background-color: var(--dark-color);
-	color: var(--white-color);
-	font-family: var(--typography-common);
+	background-color: var(--color-white);
+	color: var(--color-black);
+	font-family: var(--font-paragraph);
 	font-size: 100%;
 
 	/* optional */

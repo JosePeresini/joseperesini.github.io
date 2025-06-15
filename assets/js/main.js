@@ -1,70 +1,116 @@
-const headerNav = document.querySelector(".header__nav");
-const headerMenu = document.querySelector(".header__menu");
-const works = document.querySelector(".works");
+const body = document.querySelector("body");
+const navButton = document.querySelector(".navigation__button");
+const navMenu = document.querySelector(".mobile__button");
+const navMenuList = document.querySelector(".mobile");
+const footerButton = document.querySelector(".footer__button--absolute");
+const mobileLinks = document.querySelectorAll(".mobile__a");
 
-const headerLinks = [
-	{ name: "Sobre mí", href: "#about" },
-	{ name: "Contacto", href: "#footer" },
-];
+let isMenuOpen = false;
 
-const worksData = [
-	{
-		title: "Pizzería Mamma Mía",
-		description:
-			"Es un sistema de autenticación con formularios de registro y login. El registro asegura que el email, contraseña y su confirmación sean válidos, mientras que el login verifica las credenciales, proporcionando un acceso seguro y eficiente a la aplicación.",
-		src: "./assets/imgs/projects/01-pizzeria-mamma-mia.png",
-		web: "https://pizzeriamammamia.joseperesini.com/",
-	},
-	{
-		title: "Conversor de Moneda",
-		description:
-			"Es una convertidor que permite transformar pesos chilenos a otras monedas o divisas, actualizando automáticamente los valores y proporcionando gráficos para visualizar las conversiones.",
-		src: "./assets/imgs/projects/converter-money.png",
-		web: "https://todolist.joseperesini.com",
-	},
-	{
-		title: "Lista de Tareas",
-		description:
-			"Es una herramienta para gestionar actividades diarias donde puedes añadir tareas mediante un formulario, contabilizar el total de añadidas o eliminadas, marcar como completadas o suprimir una tarea al hacer clic en un botón.",
-		src: "./assets/imgs/projects/todo-list.png",
-		web: "https://moneyconverterch.joseperesini.com",
-	},
-];
+function toggleMobileMenu(event) {
+	event.stopPropagation();
 
-let templateLinks = "";
-let templateWorks = "";
+	if (!isMenuOpen) {
+		navMenuList.style.display = "flex";
+		navMenu.setAttribute("aria-expanded", "true");
+		navMenu.setAttribute("aria-label", "Cerrar menú de navegación");
+		isMenuOpen = true;
 
-for (let link of headerLinks) {
-	templateLinks += `<a href="${link.href}" class="header__a">${link.name}</a>`;
+		const icon = navMenu.querySelector(".mobile__i");
+		icon.classList.remove("bi-list");
+		icon.classList.add("bi-x");
+	} else {
+		navMenuList.style.display = "none";
+		navMenu.setAttribute("aria-expanded", "false");
+		navMenu.setAttribute("aria-label", "Abrir menú de navegación");
+		isMenuOpen = false;
+
+		const icon = navMenu.querySelector(".mobile__i");
+		icon.classList.remove("bi-x");
+		icon.classList.add("bi-list");
+	}
 }
 
-for (let work of worksData) {
-	let target = "_blank";
+function closeMobileMenu() {
+	if (isMenuOpen) {
+		navMenuList.style.display = "none";
+		navMenu.setAttribute("aria-expanded", "false");
+		navMenu.setAttribute("aria-label", "Abrir menú de navegación");
+		isMenuOpen = false;
 
-	templateWorks += `
-                    <article class="works__article">
-                        <header class="works__header">
-                            <h3 class="works__h3">${work.title}</h3>
-                            <p class="works__p">${work.description}</p>
-                        </header>
-                        <figure class="works__figure">
-                            <img
-                                src="${work.src}"
-                                alt="${work.title}"
-                                class="works__img"
-                            />
-                            <figcaption class="works__figcaption">
-                                <a href="${work.web}" target="${target}" class="works__a">WEB</a>
-                            </figcaption>
-                        </figure>   
-                    </article>
-					<hr class="works__hr" />
-    `;
+		const icon = navMenu.querySelector(".mobile__i");
+		icon.classList.remove("bi-x");
+		icon.classList.add("bi-list");
+	}
 }
 
-headerNav.innerHTML = templateLinks;
-works.innerHTML = templateWorks;
+function scrollToTop() {
+	window.scrollTo({
+		top: 0,
+	});
+}
 
-headerMenu.addEventListener("click", () => {
-	headerNav.classList.toggle("menu--open");
+function handleMobileLinkClick(event) {
+	setTimeout(() => {
+		closeMobileMenu();
+	}, 100);
+}
+
+navMenu.addEventListener("click", toggleMobileMenu);
+
+body.addEventListener("click", function (event) {
+	if (
+		isMenuOpen &&
+		!navMenuList.contains(event.target) &&
+		!navMenu.contains(event.target)
+	) {
+		closeMobileMenu();
+	}
+});
+
+mobileLinks.forEach((link) => {
+	link.addEventListener("click", handleMobileLinkClick);
+});
+
+navButton.addEventListener("click", scrollToTop);
+
+// Scroll al inicio al hacer clic en el botón del footer
+// if (footerButton) {
+// 	footerButton.addEventListener("click", scrollToTop);
+// }
+
+document.addEventListener("keydown", function (event) {
+	if (event.key === "Escape" && isMenuOpen) {
+		closeMobileMenu();
+	}
+});
+
+window.addEventListener("resize", function () {
+	if (window.innerWidth >= 1024 && isMenuOpen) {
+		closeMobileMenu();
+	}
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+	navMenuList.style.display = "none";
+	navMenu.setAttribute("aria-expanded", "false");
+
+	document.body.classList.add("js-enabled");
+});
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+	anchor.addEventListener("click", function (e) {
+		e.preventDefault();
+		const target = document.querySelector(this.getAttribute("href"));
+
+		if (target) {
+			const navHeight = document.querySelector(".navigation").offsetHeight;
+			const targetPosition = target.offsetTop - navHeight - 20;
+
+			window.scrollTo({
+				top: targetPosition,
+				behavior: "smooth",
+			});
+		}
+	});
 });

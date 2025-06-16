@@ -272,13 +272,12 @@
 	}
 
 	.tech__ul {
-		gap: 1.5rem;
-		justify-content: center;
 	}
 
 	.tech__li {
 		max-width: 200px;
 		min-height: 4rem;
+		width: 10rem;
 	}
 
 	.tech__h4 {
@@ -445,7 +444,6 @@
 	}
 
 	.contact__a {
-		font-size: 2rem;
 		padding: 1.5rem;
 	}
 

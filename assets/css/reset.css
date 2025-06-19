@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
 	/* Main Colors */
@@ -43,7 +43,7 @@
 	--shadow-xl: 0 3px 30px 10px;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
 	:root {
 		--color-white: #1a1d21;
 		--color-white-l: #212529;
@@ -152,15 +152,6 @@ q:before,
 q:after {
 	content: "";
 	content: none;
-}
-
-::-moz-selection {
-	background-color: var(--black-color);
-	color: var(--white-color);
-}
-::selection {
-	background-color: var(--black-color);
-	color: var(--white-color);
 }
 
 form,

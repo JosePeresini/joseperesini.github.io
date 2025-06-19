@@ -137,7 +137,6 @@
 	}
 
 	.contact__nav {
-		max-width: 250px;
 	}
 
 	.contact__a {
@@ -184,7 +183,7 @@
 
 	.hero {
 		margin: 8rem 0 0 0;
-		max-width: 100%;
+		max-width: 95%;
 
 		align-items: center;
 		flex-direction: row;
@@ -217,7 +216,7 @@
 	}
 
 	.work {
-		max-width: 100%;
+		max-width: 95%;
 	}
 
 	.work__container {
@@ -229,7 +228,9 @@
 	}
 
 	.work__article {
-		height: 100%;
+		min-height: 100%;
+
+		justify-content: space-between;
 	}
 
 	.work__figure {
@@ -240,8 +241,12 @@
 		font-size: 1.1rem;
 	}
 
+	.work__skills {
+		align-items: center;
+	}
+
 	.about {
-		max-width: 100%;
+		max-width: 90%;
 	}
 
 	.about__container {
@@ -268,7 +273,11 @@
 	}
 
 	.tech {
-		max-width: 100%;
+		max-width: 80%;
+
+		align-items: center;
+		flex-direction: row;
+		gap: 6em 6em;
 	}
 
 	.tech__ul {
@@ -295,7 +304,6 @@
 	}
 
 	.contact__nav {
-		max-width: 300px;
 	}
 
 	.contact__a {
@@ -333,7 +341,6 @@
 	}
 
 	.navigation__ul {
-		gap: 3rem;
 	}
 
 	.navigation__a {
@@ -367,9 +374,13 @@
 		padding: 1.8rem 3.5rem;
 	}
 
+	.work {
+		max-width: fit-content;
+		width: 100%;
+	}
+
 	.work__container {
 		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-		gap: 4rem;
 	}
 
 	.work__figure {
@@ -439,6 +450,10 @@
 		font-size: 1.8rem;
 	}
 
+	.contact__nav {
+		max-width: 30%;
+	}
+
 	.contact__p {
 		font-size: 1.4rem;
 	}
@@ -468,6 +483,8 @@
 @media screen and (min-width: 1920px) {
 	.container {
 		max-width: 1600px;
+
+		gap: 10rem;
 	}
 
 	.hero__h2 {

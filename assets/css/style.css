@@ -2,7 +2,7 @@
 	display: grid;
 	width: 100%;
 
-	gap: 2rem 4rem;
+	gap: 6rem 4rem;
 	grid-template-areas:
 		"navigation"
 		"hero"
@@ -57,7 +57,9 @@
 
 .navigation__titles {
 	display: flex;
+	padding-left: 1rem;
 
+	align-items: start;
 	flex-direction: column;
 	justify-content: center;
 }
@@ -73,8 +75,8 @@
 
 .navigation__h2 {
 	color: var(--color-secondary);
-	font-size: 0.7rem;
-	letter-spacing: 3px;
+	font-size: 0.8rem;
+	letter-spacing: 4.5px;
 	text-transform: uppercase;
 }
 
@@ -174,7 +176,7 @@
 
 	display: flex;
 	margin: 6rem 0 0 0;
-	max-width: 90%;
+	max-width: 93%;
 	padding: 2rem 0;
 	width: 100%;
 
@@ -246,6 +248,26 @@
 	background-color: var(--color-primary-d);
 	box-shadow: var(--shadow-md) rgba(0, 0, 0, 0.3);
 	color: var(--color-secondary-l);
+}
+
+.hero__figure {
+	height: 25em;
+}
+
+.hero__img {
+	background-color: red;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
+.hero__figcaption {
+	background-color: blueviolet;
+}
+
+.hero__span--fig {
+	background-color: blue;
+	color: white;
 }
 
 .work {
@@ -510,7 +532,7 @@
 	max-width: 90%;
 
 	flex-direction: column;
-	gap: 2rem;
+	gap: 3rem;
 }
 
 .tech__h3 {
@@ -524,7 +546,7 @@
 
 	align-items: center;
 	flex-direction: column;
-	gap: 0.5rem;
+	gap: 1rem;
 }
 
 .tech__h3::after {
@@ -532,16 +554,16 @@
 	content: "";
 	display: block;
 	height: 3px;
-	width: 60px;
+	width: 50%;
 }
 
 .tech__ul {
 	display: flex;
 
 	align-items: center;
-	column-gap: 0.5rem;
+	gap: 1rem 0.5rem;
 	flex-wrap: wrap;
-	row-gap: 1rem;
+
 	justify-content: space-evenly;
 }
 
@@ -549,7 +571,7 @@
 	background-color: var(--color-secondary-l);
 	color: var(--color-primary-l);
 	display: flex;
-	max-width: 45%;
+	max-width: 30%;
 	min-height: 3rem;
 	width: 100%;
 
@@ -562,7 +584,8 @@
 
 .tech__li:hover {
 	background-color: var(--color-primary);
-	color: var(--color-black);
+	color: var(--color-white);
+	scale: 1.1;
 }
 
 .tech__h4 {
@@ -593,7 +616,6 @@
 
 .contact__nav {
 	display: flex;
-	max-width: 200px;
 	width: 100%;
 
 	align-items: center;
@@ -605,8 +627,8 @@
 	background-color: var(--color-primary-d);
 	color: var(--color-secondary-l);
 	display: flex;
-	font-size: 1.3rem;
-	padding: 0.8rem;
+	font-size: 1.8rem;
+	padding: 1.3rem;
 
 	align-items: center;
 	justify-content: center;
@@ -617,22 +639,6 @@
 .contact__a:hover {
 	background-color: var(--color-primary-d);
 	transform: scale(1.2);
-}
-
-.contact__a--email {
-	border-radius: var(--radius-md);
-	border: 2px solid var(--color-primary);
-	color: var(--color-secondary-d);
-	font-weight: 600;
-	font-size: 1rem;
-	padding: 0.5rem 1rem;
-
-	transition: var(--transition-medium);
-}
-
-.contact__a--email:hover {
-	background-color: var(--color-primary);
-	color: var(--color-secondary-l);
 }
 
 .footer {
